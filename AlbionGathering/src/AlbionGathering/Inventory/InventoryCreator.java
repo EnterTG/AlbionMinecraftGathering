@@ -16,7 +16,7 @@ import AlbionGathering.Main.PlayersStats;
 
 public class InventoryCreator {
 
-
+	public static final String INV_NAME = "Gathering statistics";
 	public static Inventory getStatsInventory(Player p)
 	{
 		return getStatsInventory(PlayersStats.getPlayersStats().getPlayerStats(p));
@@ -25,7 +25,7 @@ public class InventoryCreator {
 	
 	public static Inventory getStatsInventory(PlayerStats p)
 	{
-		Inventory inv = Bukkit.createInventory(null, 36, "Gathering statistics");
+		Inventory inv = Bukkit.createInventory(null, 36, INV_NAME);
 		for(GatheringType gt : GatheringType.values())
 		{
 			

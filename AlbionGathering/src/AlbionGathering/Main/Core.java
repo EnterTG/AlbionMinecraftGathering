@@ -12,6 +12,7 @@ import AlbionGathering.Commands.StatsCommand;
 import AlbionGathering.Gathering.GatheringExpCalculator;
 import AlbionGathering.Gathering.GatheringManager;
 import AlbionGathering.Listeners.EntityDieListener;
+import AlbionGathering.Listeners.InventoryClickListener;
 import AlbionGathering.Listeners.PlayerBreakBlockListener;
 import AlbionGathering.Listeners.PlayerJoinListener;
 import AlbionGathering.Listeners.PlayerStartGatheringListener;
@@ -37,7 +38,7 @@ public class Core extends JavaPlugin{
 		this.getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
 		this.getServer().getPluginManager().registerEvents(new PlayerBreakBlockListener(), this);
 		this.getServer().getPluginManager().registerEvents(new EntityDieListener(), this);
-		
+		this.getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
 		protocolManager = ProtocolLibrary.getProtocolManager();
 		protocolManager.addPacketListener(new PlayerStartGatheringListener(this, ListenerPriority.NORMAL,PacketType.Play.Client.BLOCK_DIG));
 		
